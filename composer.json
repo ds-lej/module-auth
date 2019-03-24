@@ -1,0 +1,25 @@
+{
+    "name": "dslej/auth",
+    "description": "",
+    "authors": [
+        {
+            "name": "Diamond Systems",
+            "email": "me@diamondsystems.org"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lej\\Auth\\Providers\\AuthServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Lej\\Auth\\": ""
+        }
+    }
+}
