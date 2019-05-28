@@ -2,6 +2,7 @@
 
 namespace Lej\Auth\Providers;
 
+use Asset;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
@@ -19,6 +20,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->addAssets();
     }
 
     /**
@@ -95,12 +97,12 @@ class AuthServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the services provided by the provider.
-     *
-     * @return array
+     * Add assets
+     * @throws
      */
-    public function provides()
+    protected function addAssets()
     {
-        return [];
+        if (! request()->ajax())
+            Asset::addJs('auth-main', 'assets/modules/auth/auth.js');
     }
 }
