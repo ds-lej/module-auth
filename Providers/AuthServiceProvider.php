@@ -17,10 +17,13 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerTranslations();
         $this->registerConfig();
-        $this->registerViews();
-        $this->registerFactories();
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
-        $this->addAssets();
+
+        if (! request()->ajax())
+        {
+            $this->registerFactories();
+            $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+            $this->addAssets();
+        }
     }
 
     /**
@@ -46,26 +49,6 @@ class AuthServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'auth'
         );
-    }
-
-    /**
-     * Register views.
-     *
-     * @return void
-     */
-    public function registerViews()
-    {
-        $viewPath = resource_path('views/modules/auth');
-
-        $sourcePath = __DIR__.'/../Resources/views';
-
-        $this->publishes([
-            $sourcePath => $viewPath
-        ],'views');
-
-        $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/auth';
-        }, \Config::get('view.paths')), [$sourcePath]), 'auth');
     }
 
     /**
@@ -102,7 +85,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected function addAssets()
     {
-        if (! request()->ajax())
-            Asset::addJs('auth-main', 'assets/modules/auth/auth.js');
+        Asset::addJs('auth-main', 'assets/modules/auth/auth.js');
     }
 }
