@@ -1,6 +1,6 @@
 <?php
 
-namespace Lej\Auth\Providers;
+namespace Mod\Auth\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $moduleNamespace = 'Lej\Auth\Http\Controllers';
+    protected $moduleNamespace = 'Mod\Auth\Http\Controllers';
 
     /**
      * Define the routes for the application.

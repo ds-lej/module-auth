@@ -1,6 +1,6 @@
 <?php
 
-namespace Lej\Auth\Database\Seeders;
+namespace Mod\Auth\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;

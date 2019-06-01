@@ -1,5 +1,5 @@
 {
-    "name": "dslej/auth",
+    "name": "lej/auth",
     "description": "",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lej\\Auth\\Providers\\AuthServiceProvider"
+                "Mod\\Auth\\Providers\\AuthServiceProvider"
             ],
             "aliases": {
                 
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lej\\Auth\\": ""
+            "Mod\\Auth\\": ""
         }
     }
 }

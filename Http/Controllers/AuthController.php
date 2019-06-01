@@ -1,6 +1,6 @@
 <?php
 
-namespace Lej\Auth\Http\Controllers;
+namespace Mod\Auth\Http\Controllers;
 
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;

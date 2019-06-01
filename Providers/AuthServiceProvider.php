@@ -1,6 +1,6 @@
 <?php
 
-namespace Lej\Auth\Providers;
+namespace Mod\Auth\Providers;
 
 use Asset;
 use Illuminate\Support\ServiceProvider;
