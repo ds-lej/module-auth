@@ -85,6 +85,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected function addAssets()
     {
-        Asset::addJs('auth-main', 'assets/modules/auth/auth.js');
+        Asset::addJs('auth-main', 'assets/modules/auth/auth.js', true);
     }
 }
