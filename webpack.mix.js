@@ -1,9 +1,7 @@
 const mix = require('laravel-mix');
-require('laravel-mix-merge-manifest');
 
-mix.setPublicPath('../../public/assets').mergeManifest();
-
-mix.js(__dirname + '/Resources/assets/js/app.js', '/modules/auth/auth.js');
+mix.setPublicPath('../../public/assets');
+mix.js(__dirname + '/Resources/assets-dev/js/app.js', '/modules/auth/auth.js');
 
 if (mix.inProduction())
-    mix.version();
+    mix.copy(Config.publicPath + '/modules/auth/auth.js', __dirname + '/Resources/assets/auth.js');
