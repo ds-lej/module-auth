@@ -21,21 +21,22 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        $this->mapExtRoutes();
     }
 
     /**
-     * Define the "api" routes for the application.
+     * Define the "ext" routes for the application.
      *
-     * These routes are typically stateless.
+     * These routes all receive session state, CSRF protection, etc.
+     * And also, heading "EXT"
      *
      * @return void
      */
-    protected function mapApiRoutes()
+    protected function mapExtRoutes()
     {
-        Route::prefix('api')
-            ->middleware('api')
+        Route::prefix('ext')
+            ->middleware('ext')
             ->namespace($this->moduleNamespace)
-            ->group(__DIR__ . '/../Routes/api.php');
+            ->group(__DIR__ . '/../Routes/ext.php');
     }
 }

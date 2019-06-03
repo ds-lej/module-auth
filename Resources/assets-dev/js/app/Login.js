@@ -16,7 +16,7 @@ Ext.define('Auth.Login', {
     resizable: false,
     draggable: false,
 
-    urlLogin: Cfg.api('auth/login'),
+    urlLogin: Cfg.urlExt('auth/login'),
 
     formLogin: null,
 

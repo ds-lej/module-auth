@@ -9,7 +9,7 @@ Ext.define('Auth.Auth', {
     rBtn: null,
     pBarContainer: null,
 
-    urlCheckAuth: Cfg.api('auth'),
+    urlCheckAuth: Cfg.urlExt('auth'),
 
     /**
      * Constructor
