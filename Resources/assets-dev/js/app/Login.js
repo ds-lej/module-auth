@@ -66,9 +66,8 @@ Ext.define('Auth.Login', {
     {
         this.formLogin.getForm().submit({
             url: this.urlLogin,
-            // headers: Cfg.ajaxHeaders(),
 
-            success: function(form, action){
+            success: function(form, action) {
                 Cfg.log('success', arguments);
                 // Ext.MessageBox.alert('Авторизация пройдена. ',action.result.message);
             },
